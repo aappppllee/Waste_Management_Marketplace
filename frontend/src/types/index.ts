@@ -4,7 +4,7 @@ export interface User {
   id: number; // Matches backend DB ID type (integer)
   email: string;
   username: string;
-  createdAt: string; // ISO date string from backend
+  createdAt: Date; // ISO date string from backend
   profileImage?: string | null; // Full URL from backend, can be null
 }
 
@@ -17,7 +17,7 @@ export interface Product {
   images: string[]; // Array of full image URLs from backend
   sellerId: number; // Matches User.id type
   sellerName: string;
-  createdAt: string; // ISO date string
+  createdAt: Date; // ISO date string
 }
 
 export interface CartItem {
@@ -25,13 +25,13 @@ export interface CartItem {
   productId: number; // Product's ID
   quantity: number;
   product: Product; // Full product details, including full image URLs
-  addedAt?: string; // ISO date string
+  addedAt?: Date; // ISO date string
 }
 
 export interface Purchase {
   id: number; // Purchase ID from backend
   userId: number;
-  purchaseDate: string; // ISO date string
+  purchaseDate: Date; // ISO date string
   totalAmount: number;
   items: PurchaseItem[];
 }
@@ -40,7 +40,7 @@ export interface PurchaseItem {
   id: number; // PurchaseItem ID from backend
   productId: number;
   product: Product; // Snapshot of product at time of purchase, with full image URLs
-  purchaseDate: string; // ISO date string (from parent Purchase)
+  purchaseDate: Date; // ISO date Date (from parent Purchase)
   quantity: number;
 }
 

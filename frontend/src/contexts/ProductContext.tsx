@@ -7,6 +7,7 @@ import { useAuth } from "./AuthContext";
 
 interface ProductContextType {
   products: Product[];
+  filteredProducts: Product[];
   userProducts: Product[];
   isLoading: boolean;
   currentPage: number;
@@ -41,6 +42,7 @@ const PRODUCTS_PER_PAGE = 8;
 export function ProductProvider({ children }: { children: React.ReactNode }) {
   const { currentUser } = useAuth();
   const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]); // Initialize state
   const [userProducts, setUserProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);

@@ -1,4 +1,4 @@
-# EcoFinds---Sustainable-Second-Hand-Marketplace
+# Nebula---Sustainable-Second-Hand-Marketplace
 
 Project Explaination Link : 
 
